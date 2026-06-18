@@ -137,7 +137,7 @@ I'm continuing work on the code-to-docs eval harness contribution. Read these fi
 2. .claude-workspace/PROGRESS.md — where we are right now
 3. .claude-workspace/DECISIONS.md — locked decisions (skim, don't relitigate)
 
-The fork is mounted at C:\Users\<you>\contrib\code-to-docs-fork\code-to-docs.
+The fork is mounted at C:\Users\<you>\contrib\code-to-docs-fork.
 The branch is eval-harness-pr1.
 The agent-eval-harness reference clone is at C:\Users\<you>\contrib\agent-eval-harness.
 
@@ -153,7 +153,7 @@ Replace `<you>` with your username. New Claude reads, summarizes, proposes. You'
 If you want to re-run the REPL exercise, run pytest, or test code locally:
 
 ```powershell
-cd C:\Users\<you>\contrib\code-to-docs-fork\code-to-docs
+cd C:\Users\<you>\contrib\code-to-docs-fork
 py -m venv .venv
 .\.venv\Scripts\Activate.ps1
 pip install openai pytest
@@ -168,7 +168,7 @@ pip show openai
 For LLM API access (REPL or future `execute.py` runs), set env vars in each PowerShell session:
 
 ```powershell
-$env:PYTHONPATH = "C:\Users\<you>\contrib\code-to-docs-fork\code-to-docs\src"
+$env:PYTHONPATH = "C:\Users\<you>\contrib\code-to-docs-fork\src"
 $env:MAX_CONTEXT_CHARS = "32000"
 
 # For OpenAI:
@@ -191,7 +191,7 @@ The venv folder `.venv` is in code-to-docs's `.gitignore` upstream → no PR-dif
 After Claude adds new files or decisions to `.claude-workspace/`, sync them to the orphan branch using a temporary worktree (avoids destructive branch switches):
 
 ```powershell
-cd C:\Users\<you>\contrib\code-to-docs-fork\code-to-docs
+cd C:\Users\<you>\contrib\code-to-docs-fork
 
 git worktree add ..\claude-context-tmp claude-context
 robocopy .claude-workspace ..\claude-context-tmp\.claude-workspace /MIR
@@ -222,7 +222,7 @@ Rule of thumb: push after any session where you added decisions, walkthroughs, o
 After Steps 1-6, confirm:
 
 ```powershell
-cd C:\Users\<you>\contrib\code-to-docs-fork\code-to-docs
+cd C:\Users\<you>\contrib\code-to-docs-fork
 
 git status
 # Should say: On branch eval-harness-pr1, working tree clean
